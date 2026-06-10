@@ -29,12 +29,15 @@ Before publishing, check these files manually:
 - `README_ja.md`
 - `PUBLISHING.md`
 - `PUBLISHING_ja.md`
+- `RELEASE_NOTES.md`
+- `RELEASE_NOTES_ja.md`
 - `configs/token-cache/default-fragments.json`
 - `.github/workflows/token-cache-template.yml`
 
 Confirm that:
 
 - the README files describe the current CLI surface
+- the release notes match the intended public release
 - the default fragments are generic and publish-safe
 - no source-repo-only paths or private context remain
 
@@ -63,16 +66,28 @@ git commit -m "Initial template release"
 gh repo create <owner>/<repo> --public --source . --remote origin --push
 ```
 
-## 5. Post-Publish Checks
+## 5. Create The Initial GitHub Release
+
+After the first push, create a tagged release from the exported repository.
+
+```sh
+cd target/token-cache-template-repo
+git tag v0.1.0
+git push origin v0.1.0
+gh release create v0.1.0 --title "v0.1.0" --notes-file RELEASE_NOTES.md
+```
+
+## 6. Post-Publish Checks
 
 After publishing, verify:
 
 - the repository home page renders `README.md` correctly
 - `README_ja.md` is present and readable
+- the `v0.1.0` release is visible with the expected notes
 - the GitHub Actions workflow starts and passes
 - the repository contains no `target/` runtime leftovers beyond `.gitignore`
 
-## 6. Update The Source Repo Only When Needed
+## 7. Update The Source Repo Only When Needed
 
 The exported template repository is the public artifact.
 The source repository remains the place where future edits, exports, and validations are prepared.

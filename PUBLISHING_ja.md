@@ -29,12 +29,15 @@ uv run python tools/validate_token_cache_template.py
 - `README_ja.md`
 - `PUBLISHING.md`
 - `PUBLISHING_ja.md`
+- `RELEASE_NOTES.md`
+- `RELEASE_NOTES_ja.md`
 - `configs/token-cache/default-fragments.json`
 - `.github/workflows/token-cache-template.yml`
 
 確認ポイント:
 
 - README が現在の CLI surface と一致している
+- release notes が今回公開する内容と一致している
 - default fragments が generic かつ publish-safe である
 - source repository 専用 path や private context が残っていない
 
@@ -63,16 +66,28 @@ git commit -m "Initial template release"
 gh repo create <owner>/<repo> --public --source . --remote origin --push
 ```
 
-## 5. 公開後の確認
+## 5. 初回 GitHub Release を作成する
+
+最初の push の後で、exported repository から tag と release を作成します。
+
+```sh
+cd target/token-cache-template-repo
+git tag v0.1.0
+git push origin v0.1.0
+gh release create v0.1.0 --title "v0.1.0" --notes-file RELEASE_NOTES.md
+```
+
+## 6. 公開後の確認
 
 公開後は次を確認します。
 
 - repository のトップで `README.md` が正しく表示される
 - `README_ja.md` が存在し、読める
+- `v0.1.0` release が作成され、想定した notes が表示される
 - GitHub Actions workflow が起動し、成功する
 - `.gitignore` 以外に `target/` の runtime 生成物が混ざっていない
 
-## 6. source repository の役割
+## 7. source repository の役割
 
 公開される成果物は exported template repository です。
 source repository 側は今後も編集、再 export、validation の準備場所として使います。
