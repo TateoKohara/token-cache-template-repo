@@ -1,0 +1,38 @@
+{
+  "fragments": [
+    {
+      "key": "token-efficiency-baseline",
+      "title": "Token efficiency baseline",
+      "type": "static",
+      "tags": [
+        "token",
+        "baseline",
+        "copilot"
+      ],
+      "content": [
+        "Keep static policy in stable instructions or skills, not repeated per-turn text.",
+        "Default to concise answers and targeted reads before broad exploration.",
+        "Use subagents or isolated search summaries for wide repo exploration.",
+        "Keep static context first and dynamic context last in reusable prompt packets.",
+        "Save a compact snapshot before a session or model switch.",
+        "This cache is local resume state, not provider-side KV cache resurrection."
+      ]
+    },
+    {
+      "key": "project-static-frame",
+      "title": "Project static frame",
+      "type": "static",
+      "tags": [
+        "project",
+        "baseline",
+        "architecture"
+      ],
+      "content": [
+        "Summarize the repository's purpose, platform, and primary engineering boundary in 3 to 5 lines.",
+        "Record only stable project facts that should survive across session resets and model switches.",
+        "Prefer architecture boundaries, artifact locations, and workflow rules over volatile run state.",
+        "Replace this fragment in each consuming repository with project-specific content before regular use."
+      ]
+    }
+  ]
+}
