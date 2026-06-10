@@ -25,6 +25,7 @@ uv run python tools/validate_token_cache_template.py
 
 公開前に次を確認します。
 
+- `LICENSE`
 - `README.md`
 - `README_ja.md`
 - `PUBLISHING.md`
@@ -37,6 +38,7 @@ uv run python tools/validate_token_cache_template.py
 確認ポイント:
 
 - README が現在の CLI surface と一致している
+- license が想定した open-use policy と一致している
 - release notes が今回公開する内容と一致している
 - default fragments が generic かつ publish-safe である
 - source repository 専用 path や private context が残っていない

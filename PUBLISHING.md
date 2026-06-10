@@ -25,6 +25,7 @@ Do not publish if this command fails.
 
 Before publishing, check these files manually:
 
+- `LICENSE`
 - `README.md`
 - `README_ja.md`
 - `PUBLISHING.md`
@@ -37,6 +38,7 @@ Before publishing, check these files manually:
 Confirm that:
 
 - the README files describe the current CLI surface
+- the license matches the intended open-use policy
 - the release notes match the intended public release
 - the default fragments are generic and publish-safe
 - no source-repo-only paths or private context remain
