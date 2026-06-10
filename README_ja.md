@@ -67,6 +67,10 @@ uv run python tools/validate_token_cache_template.py
 
 この検証では bootstrap、fragment seed、template 経由の `prepare-switch`、blank template から作った working summary 経路、packet render をまとめて確認します。
 
+## License
+
+このテンプレートは MIT License で公開しています。template 本体またはその重要部分を再配布する場合は、著作権表示と license 文を保持してください。詳細は `LICENSE` を参照してください。
+
 GitHub 公開の具体的な手順は、template repository を export した後の `PUBLISHING.md` と `PUBLISHING_ja.md` を参照してください。
 
 ## 公開前の仕上げ

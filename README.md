@@ -67,6 +67,10 @@ uv run python tools/validate_token_cache_template.py
 
 This checks bootstrap, fragment seeding, template-backed `prepare-switch`, generated working-summary flow, and packet rendering.
 
+## License
+
+This template is published under the MIT License. Keep the copyright notice and license text when redistributing the template or substantial portions of it. See `LICENSE`.
+
 For the actual GitHub publishing steps, see `PUBLISHING.md` after exporting this template repository.
 
 ## Next Steps
